@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(-45deg, #ff4e50, #fc913a, #f9d423, #4cbf4c, #2a9df4, #8e44ad);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating Bubbles */
+.bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: bubbleRise 10s infinite ease-in-out;
+}
+
+.bubble:nth-child(1) { left: 10%; animation-duration: 8s; width: 40px; height: 40px; }
+.bubble:nth-child(2) { left: 20%; animation-duration: 12s; width: 60px; height: 60px; }
+.bubble:nth-child(3) { left: 40%; animation-duration: 10s; width: 80px; height: 80px; }
+.bubble:nth-child(4) { left: 60%; animation-duration: 14s; width: 50px; height: 50px; }
+.bubble:nth-child(5) { left: 80%; animation-duration: 9s; width: 70px; height: 70px; }
+
+@keyframes bubbleRise {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-100vh) scale(1.2); }
+}
+
+/* Keep Radio Buttons Constant */
+ul {
+  position: relative;
+  z-index: 11; /* Ensures options stay above animations */
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+}
+
+input[type="radio"] {
+  position: static; /* Prevents movement */
+  transform: none;  /* Ensures no unwanted transforms */
+}
+
+/* Quiz Container */
+.quiz-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 600px;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.quiz-header {
+  padding: 4rem;
+}
+
+h2 {
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+ul li label {
+  cursor: pointer;
+}
+
+button {
+  background-color: #8e44ad;
+  color: #fff;
+  border: none;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: inherit;
+  padding: 1.3rem;
+}
+
+button:hover {
+  background-color: #732d91;
+}
+
+button:focus {
+  outline: none;
+  background-color: #5e3370;
+}
